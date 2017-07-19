@@ -1,0 +1,40 @@
+object Form1: TForm1
+  Left = 549
+  Height = 309
+  Top = 316
+  Width = 595
+  Caption = 'Form1'
+  ClientHeight = 309
+  ClientWidth = 595
+  DesignTimePPI = 144
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.3'
+  object Memo1: TMemo
+    Left = 24
+    Height = 202
+    Top = 22
+    Width = 544
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 0
+  end
+  object stop: TButton
+    Left = 493
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'stop'
+    OnClick = stopClick
+    TabOrder = 1
+  end
+  object start: TButton
+    Left = 360
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'start'
+    OnClick = startClick
+    TabOrder = 2
+  end
+end
