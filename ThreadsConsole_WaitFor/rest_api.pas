@@ -54,7 +54,7 @@ end;
 procedure TTest.Ready1();
 begin
   sleep(1);
-  writeln('ready: ' + IntToStr(MilliSecondOfTheSecond(now)));
+  writeln('ready 1: ' + IntToStr(MilliSecondOfTheSecond(now)));
   sleep(1);
   if Assigned(Event_Finish) then
     Event_Finish('thread ready 1');
@@ -64,7 +64,7 @@ end;
 procedure TTest.Ready2();
 begin
   sleep(1);
-  writeln('ready: ' + IntToStr(MilliSecondOfTheSecond(now)));
+  writeln('ready 2: ' + IntToStr(MilliSecondOfTheSecond(now)));
   sleep(1);
   if Assigned(Event_Finish) then
     Event_Finish('thread ready 2');

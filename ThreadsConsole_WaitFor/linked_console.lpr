@@ -55,7 +55,7 @@ type
 
   procedure TLinkApp.TheSignal(AMsg: string);
   begin
-    writeln(AMsg + ': ' + IntToStr(MilliSecondOfTheSecond(now)));
+    writeln('MAIN: ' + AMsg + ': ' + IntToStr(MilliSecondOfTheSecond(now)));
   end;
 
   destructor TLinkApp.Destroy;
@@ -67,7 +67,7 @@ var
   Application: TLinkApp;
 begin
   Application := TLinkApp.Create(nil);
-  Application.Title := 'Learning Threads';
+  Application.Title := 'LinkedIn App';
   Application.Run;
   Application.Free;
 end.

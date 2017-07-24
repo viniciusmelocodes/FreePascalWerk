@@ -8,17 +8,18 @@
       <Unit0>
         <Filename Value="linked_console.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="17" Y="37"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="23"/>
+        <CursorPos X="75" Y="35"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="rest_api.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="40"/>
-        <CursorPos X="131" Y="41"/>
+        <TopLine Value="39"/>
+        <CursorPos X="75" Y="51"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit1>
