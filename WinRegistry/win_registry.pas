@@ -32,7 +32,6 @@ begin
   try
     r := TRegistry.Create;
     r.RootKey := ROOT;
-    r.Access := KEY_ALL_ACCESS;
 
     if r.OpenKey(HIVE, False) then
     begin
