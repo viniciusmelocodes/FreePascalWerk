@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="learn_dlls.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="9"/>
+        <CursorPos X="31" Y="37"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="learn_dlls.lpr"/>
+        <Caret Line="32" Column="25" TopLine="15"/>
+      </Position1>
+      <Position2>
+        <Filename Value="learn_dlls.lpr"/>
+        <Caret Line="34" Column="72"/>
+      </Position2>
+      <Position3>
+        <Filename Value="learn_dlls.lpr"/>
+        <Caret Line="26" Column="15" TopLine="9"/>
+      </Position3>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
