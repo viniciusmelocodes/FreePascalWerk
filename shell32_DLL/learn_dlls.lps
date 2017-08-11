@@ -4,14 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="learn_dlls.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="22"/>
-        <CursorPos X="50" Y="58"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="2"/>
+        <CursorPos X="32" Y="32"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -21,8 +20,18 @@
         <CursorPos X="11" Y="393"/>
         <UsageCount Value="10"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="get_dll_version.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="22"/>
+        <CursorPos X="133" Y="61"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit2>
     </Units>
-    <JumpHistory Count="20" HistoryIndex="19">
+    <JumpHistory Count="23" HistoryIndex="22">
       <Position1>
         <Filename Value="learn_dlls.lpr"/>
         <Caret Line="32" Column="25" TopLine="15"/>
@@ -81,28 +90,40 @@
       </Position14>
       <Position15>
         <Filename Value="learn_dlls.lpr"/>
-        <Caret Line="34" Column="43" TopLine="39"/>
+        <Caret Line="46" Column="13" TopLine="39"/>
       </Position15>
       <Position16>
         <Filename Value="learn_dlls.lpr"/>
-        <Caret Line="46" Column="13" TopLine="39"/>
+        <Caret Line="49" Column="21" TopLine="27"/>
       </Position16>
       <Position17>
         <Filename Value="learn_dlls.lpr"/>
-        <Caret Line="49" Column="21" TopLine="27"/>
+        <Caret Line="64" Column="53" TopLine="33"/>
       </Position17>
       <Position18>
         <Filename Value="learn_dlls.lpr"/>
-        <Caret Line="64" Column="53" TopLine="33"/>
+        <Caret Line="40" TopLine="28"/>
       </Position18>
       <Position19>
         <Filename Value="learn_dlls.lpr"/>
-        <Caret Line="40" TopLine="28"/>
+        <Caret Line="61" Column="22" TopLine="34"/>
       </Position19>
       <Position20>
-        <Filename Value="learn_dlls.lpr"/>
-        <Caret Line="61" Column="22" TopLine="34"/>
+        <Filename Value="get_dll_version.pas"/>
+        <Caret Line="11"/>
       </Position20>
+      <Position21>
+        <Filename Value="get_dll_version.pas"/>
+        <Caret Line="20" Column="38"/>
+      </Position21>
+      <Position22>
+        <Filename Value="get_dll_version.pas"/>
+        <Caret Line="26" Column="17"/>
+      </Position22>
+      <Position23>
+        <Filename Value="get_dll_version.pas"/>
+        <Caret Line="30" Column="5"/>
+      </Position23>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
