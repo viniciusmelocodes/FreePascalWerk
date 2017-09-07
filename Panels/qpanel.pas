@@ -17,10 +17,22 @@ type
     constructor Create(AOwner: TWinControl); reintroduce;
     {BordLeft - border spacing left, PosType - 0 top, 1 interim, 2 bottom}
     constructor Create(AOwner: TWinControl; AlignLeft: TControl = nil; AlignTop: TControl = nil; BordLeft: integer = 0; BordTop: integer = 0; PosType: integer = 1); reintroduce;
+    {change to focus colors panel}
+    procedure FocusP;
+    {return to original colors panel}
+    procedure UnFocusP;
   end;
 
 type
   TQPanels = array of TQPanel;
+
+{colors}
+const
+  DarkGreen = $00008000;
+  DarkGrey = $00333333;
+  MidGrey = $00C0C0C0;
+  LightGrey = $00DDDDDD;
+  colorWhite = clWhite;
 
 implementation
 
@@ -56,6 +68,18 @@ begin
   end;
 
   _PosType := PosType;
+end;
+
+procedure TQPanel.FocusP;
+begin
+  self.Font.Color := DarkGreen;
+  self.Color := colorWhite;
+end;
+
+procedure TQPanel.UnFocusP;
+begin
+  self.Font.Color := DarkGrey;
+  self.Color := LightGrey;
 end;
 
 procedure TQPanel.Paint;

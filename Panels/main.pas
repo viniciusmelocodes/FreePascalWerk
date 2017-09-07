@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
-  qpanel, form_text;
+  qpanel;
 
 type
   TForm1 = class(TForm)
@@ -31,7 +31,6 @@ implementation
 
 procedure TForm1.FormActivate(Sender: TObject);
 var
-
   i: integer = 5;
 
 begin
@@ -42,14 +41,12 @@ begin
     if i = Low(_Panels) then
     begin
       _Panels[i] := TQPanel.Create(self, Panel2, Panel1, 0);
-      _Panels[i].Font.Color := DarkGreen;   //create method focus / unfocus
-      _Panels[i].Color := colorWhite;
+      _Panels[i].FocusP;
     end
     else
     begin
       _Panels[i] := TQPanel.Create(self, Panel2, _Panels[i - 1], 0);
-      _Panels[i].Font.Color := DarkGrey;
-      _Panels[i].Color := LightGrey;
+      _Panels[i].UnFocusP;
     end;
 
     _Panels[i].Name := 'P' + IntToStr(i);
@@ -61,25 +58,20 @@ end;
 
 procedure TForm1.SpeedButton1Click(Sender: TObject);
 begin
-  {return to original colors current panel}
-  _Panels[_ID].Font.Color := DarkGrey;
-  _Panels[_ID].Color := LightGrey;
+  _Panels[_ID].UnFocusP;
 
   _ID := _ID + 1;
 
   if _ID > high(_Panels) then
     _ID := low(_Panels);
 
-  {change to focus colors new current panel}
-  _Panels[_ID].Font.Color := DarkGreen;
-  _Panels[_ID].Color := colorWhite;
+  _Panels[_ID].FocusP;
 end;
 
 procedure TForm1.SpeedButton2Click(Sender: TObject);
 begin
-  {return to original colors current panel}
-  _Panels[_ID].Font.Color := DarkGrey;
-  _Panels[_ID].Color := LightGrey;
+
+  _Panels[_ID].UnFocusP;
 
   _ID := _ID - 1;
 
@@ -87,8 +79,7 @@ begin
     _ID := high(_Panels);
 
   {change to focus colors new current panel}
-  _Panels[_ID].Font.Color := DarkGreen;
-  _Panels[_ID].Color := colorWhite;
+  _Panels[_ID].FocusP;
 end;
 
 end.
