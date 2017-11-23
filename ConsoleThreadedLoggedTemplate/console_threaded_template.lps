@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="console_threaded_template.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="30"/>
+        <CursorPos X="76" Y="26"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="tlogger.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="56"/>
+        <CursorPos X="5" Y="29"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="threaded_template.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="10"/>
+        <CursorPos X="26" Y="50"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="19" HistoryIndex="18">
+      <Position1>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="27" TopLine="6"/>
+      </Position1>
+      <Position2>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="28" TopLine="6"/>
+      </Position2>
+      <Position3>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="30" TopLine="6"/>
+      </Position3>
+      <Position4>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="31" TopLine="6"/>
+      </Position4>
+      <Position5>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="32" TopLine="6"/>
+      </Position5>
+      <Position6>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="34" TopLine="6"/>
+      </Position6>
+      <Position7>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="35" TopLine="6"/>
+      </Position7>
+      <Position8>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="36" TopLine="6"/>
+      </Position8>
+      <Position9>
+        <Filename Value="tlogger.pas"/>
+        <Caret Line="105" TopLine="66"/>
+      </Position9>
+      <Position10>
+        <Filename Value="tlogger.pas"/>
+        <Caret Line="106" TopLine="66"/>
+      </Position10>
+      <Position11>
+        <Filename Value="tlogger.pas"/>
+        <Caret Line="107" TopLine="66"/>
+      </Position11>
+      <Position12>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="38" TopLine="6"/>
+      </Position12>
+      <Position13>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="39" TopLine="6"/>
+      </Position13>
+      <Position14>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="58" TopLine="17"/>
+      </Position14>
+      <Position15>
+        <Filename Value="threaded_template.pas"/>
+        <Caret Line="43" Column="36" TopLine="8"/>
+      </Position15>
+      <Position16>
+        <Filename Value="threaded_template.pas"/>
+        <Caret Line="41" Column="21" TopLine="8"/>
+      </Position16>
+      <Position17>
+        <Filename Value="threaded_template.pas"/>
+        <Caret Line="10" Column="19"/>
+      </Position17>
+      <Position18>
+        <Filename Value="threaded_template.pas"/>
+        <Caret Line="49" Column="22" TopLine="11"/>
+      </Position18>
+      <Position19>
+        <Filename Value="console_threaded_template.lpr"/>
+        <Caret Line="36" Column="35" TopLine="16"/>
+      </Position19>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
