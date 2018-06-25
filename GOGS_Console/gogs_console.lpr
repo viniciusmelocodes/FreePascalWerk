@@ -16,12 +16,14 @@ uses {$IFDEF UNIX}
   postgres_connect,
   git_clone,
   get_repos_urls,
+  Uni,
   compress_folder;
 
 type
   TGogsConsole = class(TCustomApplication)
   protected
     _hasRun: boolean;
+    _dbHandler: TCreateDBHandler;
     _noRepos: word;
     _currentRepo: word;
     _Simultan: word;
@@ -36,12 +38,12 @@ type
     procedure CatchClonedRepoName(ARepoName: string);
     procedure CatchZippedRepoName(ARepoName: string);
     procedure CatchError(AError: string);
+    procedure CatchException(AException: string);
   end;
 
   procedure TGogsConsole.DoRun;
   var
     c: TPostgresConnInfo;
-    h: TCreateDBHandler;
     r: TTGogsRepos;
 
   begin
@@ -56,14 +58,14 @@ type
       c.Password := 'gogs';
       c.Database := 'gogs';
 
-      h := TCreateDBHandler.Create(c);
+      _dbHandler := TCreateDBHandler.Create(c);
 
       if ParamCount > 0 then
       begin
-        r := TTGogsRepos.Create(h.DBConnection, h.DBTransaction, ParamStr(1).ToInt64);
+        r := TTGogsRepos.Create(_dbHandler.DBConnection, _dbHandler.DBTransaction, ParamStr(1).ToInt64);
       end
       else
-        r := TTGogsRepos.Create(h.DBConnection, h.DBTransaction);
+        r := TTGogsRepos.Create(_dbHandler.DBConnection, _dbHandler.DBTransaction);
 
       r.OnPassResults := @CatchRepoURLs;
 
@@ -85,6 +87,7 @@ type
     g: TTGit;
 
   begin
+     FreeAndNil(_dbHandler);
     _noRepos := Length(ARepoList);
 
     if _noRepos > 0 then
@@ -134,6 +137,12 @@ type
   procedure TGogsConsole.CatchError(AError: string);
   begin
     WriteLn(AError);
+  end;
+
+  procedure TGogsConsole.CatchException(AException: string);
+  begin
+    WriteLn('exception:' + AException);
+    Terminate();
   end;
 
   destructor TGogsConsole.Destroy;

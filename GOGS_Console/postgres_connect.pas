@@ -74,6 +74,8 @@ end;
 
 destructor TCreateDBHandler.Destroy();
 begin
+  FreeAndNil(_conn);
+  FreeAndNil(_transact);
   inherited Destroy;
 end;
 
