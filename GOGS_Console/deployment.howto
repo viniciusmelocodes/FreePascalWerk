@@ -1,0 +1,8 @@
+create executable script backup_repos
+
+./gogs_console 1400
+rsync *.zip /media/usb_drive
+
+add script to cron tasks for current user:
+crontab -e
+@reboot ./backup_repos
