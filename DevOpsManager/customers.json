@@ -1,0 +1,23 @@
+{
+  "Response": {
+    "Status": "success",
+    "StatusCode": 200,
+    "Failed": false,
+    "Message": [{
+      "Host":{"Name":"Lab2","Ip":"1.1.1.1","Port":"8443"},"Scheduler":{"URL":"/eve/0.0.4/evschedule","Ip":"1.1.1.1","Port":"8443"},
+      "Services":[{"Name":"SMTP", "Description":"Email forwarding","Ip":"7.7.7.7","Port":"25"},{"Name":"Firewall", "Description":"DMZ","Ip":"1.1.1.1","Port":""}],
+      "Name": "/1.0/containers/domainonly-evalgo-net1",
+      "Ip": "1.1.1.1"
+    },{
+      "Host":{"Name":"Lab3","Ip":"1.1.1.1","Port":"8443"},"Scheduler":{"URL":"/eve/0.0.4/evschedule","Ip":"1.1.1.1","Port":"8443"},
+      "Services":[{"Name":"SMTP", "Description":"Email forwarding","Ip":"1.1.1.1","Port":"25"},{"Name":"Firewall", "Description":"DMZ","Ip":"1.1.1.1","Port":""}],
+      "Name": "/1.0/containers/domainonly-evalgo-net2",
+      "Ip": "1.1.1.1"
+    },{
+      "Host":{"Name":"Lab3","Ip":"1.1.1.1","Port":"8443"},"Scheduler":{"URL":"/eve/0.0.4/evschedule","Ip":"1.1.1.1","Port":"8443"},
+      "Services":[{"Name":"SMTP", "Description":"Email forwarding","Ip":"1.1.1.1","Port":"25"},{"Name":"Firewall", "Description":"DMZ","Ip":"1.1.1.1","Port":""}],
+      "Name": "/1.0/containers/domainonly-evalgo-net3",
+      "Ip": "1.1.1.1"
+    }]
+  }
+}

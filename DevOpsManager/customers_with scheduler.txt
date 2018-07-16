@@ -1,0 +1,24 @@
+GUI:
+- host - name
+- scheduler - accesible or not (127.0.0.1) or not installed (JSON with null strings)
+
+{
+  "Response": {
+    "Status": "success",
+    "StatusCode": 200,
+    "Failed": false,
+    "Message": [{
+      "Host":{"Name":"X","Ip":"1.1.1.1","Port":"8443"},"Scheduler":{"URL":"/eve/0.0.4/evschedule","Ip":"1.1.1.1","Port":"8443"},
+      "Services":[{"Name":"SMTP", "Description":"Email forwarding","Ip":"1.1.1.1","Port":"25"}]
+     ,"Name": "/1.0/containers/domainonly-evalgo-net",
+      "Ip": "1.1.1.1"
+    }]
+  }
+}
+
+if scheduler available: can upload, container has services
+
+to add a services node later on.
+
+move scheduler URL under a URL node.
+URL node for service nodes.

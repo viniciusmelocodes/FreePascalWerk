@@ -1,0 +1,90 @@
+object NodeUpdateForm: TNodeUpdateForm
+  Left = 1154
+  Height = 268
+  Top = 448
+  Width = 482
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Node Update'
+  ClientHeight = 268
+  ClientWidth = 482
+  Color = clWhite
+  DesignTimePPI = 134
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.6'
+  object EdtIP: TEdit
+    Left = 120
+    Height = 27
+    Top = 32
+    Width = 192
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 30
+    Height = 19
+    Top = 36
+    Width = 21
+    Caption = 'IP:'
+    ParentColor = False
+  end
+  object BtnSubmit: TButton
+    Left = 189
+    Height = 27
+    Top = 232
+    Width = 105
+    BorderSpacing.CellAlignHorizontal = ccaCenter
+    Caption = 'Update'
+    OnClick = BtnSubmitClick
+    TabOrder = 1
+  end
+  object EdtName: TEdit
+    Left = 120
+    Height = 27
+    Top = 80
+    Width = 336
+    TabOrder = 2
+  end
+  object Label2: TLabel
+    Left = 30
+    Height = 19
+    Top = 84
+    Width = 47
+    Caption = 'Name:'
+    ParentColor = False
+  end
+  object CxType: TComboBox
+    Left = 120
+    Height = 27
+    Top = 128
+    Width = 193
+    ItemHeight = 19
+    TabOrder = 3
+    Text = 'Please select'
+  end
+  object Label3: TLabel
+    Left = 32
+    Height = 19
+    Top = 132
+    Width = 41
+    Caption = 'Type:'
+    ParentColor = False
+  end
+  object CxVersion: TComboBox
+    Left = 120
+    Height = 27
+    Top = 176
+    Width = 193
+    ItemHeight = 19
+    TabOrder = 4
+    Text = 'Please select'
+  end
+  object Label4: TLabel
+    Left = 32
+    Height = 19
+    Top = 180
+    Width = 59
+    Caption = 'Version:'
+    ParentColor = False
+  end
+end
