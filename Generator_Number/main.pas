@@ -52,7 +52,10 @@ begin
     Memo1.Append(RandomRange(1, 100).ToString);
   end;
 
-  memo1.Append(GenerateRandomIP());
+  memo1.Append(GenerateRandomIP('*.*.*.*'));
+  memo1.Append(GenerateRandomIP('*.1?.?1.?'));
+  memo1.Append(GenerateRandomIP('*.1?1.1*1.2*'));
+  memo1.Append(GenerateRandomIP('*11.111.*11.?11'));
 end;
 
 procedure TForm1.GenerateRandomNumbers(pNo: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
@@ -75,22 +78,12 @@ var
   theIPv4: IPv4;
 
 begin
-  //does not work. would need to generate a longer number and chop it as needed.
   if Length(pTemplate) = 0 then
   begin
     Randomize;
     theIPv4.a := RandomRange(0, 256).ToString;
-
-    sleep(800);
-    Randomize;
     theIPv4.b := RandomRange(0, 256).ToString;
-
-    sleep(1700);
-    Randomize;
     theIPv4.c := RandomRange(0, 256).ToString;
-
-    sleep(1500);
-    Randomize;
     theIPv4.d := RandomRange(0, 256).ToString;
 
     Result := theIPv4.a + '.' + theIPv4.b + '.' + theIPv4.c + '.' + theIPv4.d;

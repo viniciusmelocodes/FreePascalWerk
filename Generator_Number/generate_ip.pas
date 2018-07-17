@@ -42,7 +42,8 @@ begin
   ip.c := ExtractDelimited(3, _IP_Template, ['.']);
   ip.d := ExtractDelimited(4, _IP_Template, ['.']);
 
-  Result := ReturnSubGroup(ip.a) + ReturnSubGroup(ip.b) + ReturnSubGroup(ip.c) + ReturnSubGroup(ip.d);
+  Randomize;
+  Result := ReturnSubGroup(ip.a) + '.' + ReturnSubGroup(ip.b) + '.' + ReturnSubGroup(ip.c) + '.' + ReturnSubGroup(ip.d);
 end;
 
 function TGenerateIP.ReturnSubGroup(pIPSubGroup: string): string;
@@ -56,7 +57,6 @@ begin
     begin
       if not TryStrToInt(pIPSubGroup, i) then
       begin
-        Randomize;
         case pIPSubGroup of
           '*':
           begin
@@ -69,22 +69,61 @@ begin
         end;
       end;
     end;
+
     2:  //can be *1 or ?? or ?1
     begin
       if AnsiStartsStr('*', pIPSubGroup) then
       begin
-        Randomize;
-        Result := RandomRange(0, 100).ToString + Copy(pIPSubGroup, 1, 1);
+        Result := RandomRange(1, 3).ToString + RandomRange(1, 10).ToString + Copy(pIPSubGroup, 1, 1);
       end;
       if AnsiEndsStr('*', pIPSubGroup) then
       begin
-        Randomize;
         Result := Copy(pIPSubGroup, 0, 1) + RandomRange(0, 100).ToString;
       end;
-    end;
-    3:
-    begin
 
+      if (AnsiStartsStr('?', pIPSubGroup) and AnsiEndsStr('?', pIPSubGroup)) then
+      begin
+        Result := RandomRange(1, 3).ToString + RandomRange(0, 10).ToString;
+        exit;
+      end;
+
+      if AnsiStartsStr('?', pIPSubGroup) then
+      begin
+        Result := RandomRange(1, 10).ToString + Copy(pIPSubGroup, 2, 1);
+      end;
+      if AnsiEndsStr('?', pIPSubGroup) then
+      begin
+        Result := Copy(pIPSubGroup, 0, 1) + RandomRange(0, 10).ToString;
+      end;
+    end;
+
+    3:  //can be 111 1?1 ?1? . accept * as ?
+    begin
+      if (not AnsiContainsText(pIPSubGroup, '?') and not AnsiContainsText(pIPSubGroup, '*')) then
+      begin
+        Result := pIPSubGroup;
+        exit;
+      end;
+
+      if (AnsiStartsStr('?', pIPSubGroup) or AnsiStartsStr('*', pIPSubGroup)) and (AnsiEndsStr('?', pIPSubGroup) or AnsiEndsStr('*', pIPSubGroup)) then
+      begin
+        Result := RandomRange(1, 3).ToString + Copy(pIPSubGroup, 1, 1) + RandomRange(0, 10).ToString;
+        exit;
+      end;
+
+      if (AnsiStartsStr('?', pIPSubGroup) or AnsiStartsStr('*', pIPSubGroup)) then
+      begin
+        Result := RandomRange(1, 3).ToString + Copy(pIPSubGroup, 2, Length(pIPSubGroup));
+        exit;
+      end;
+
+      if (AnsiEndsStr('?', pIPSubGroup) or AnsiEndsStr('*', pIPSubGroup)) then
+      begin
+        Result := Copy(pIPSubGroup, 0, 2) + RandomRange(0, 10).ToString;
+        exit;
+      end;
+
+      Result := Copy(pIPSubGroup, 0, 1) + RandomRange(0, 10).ToString + Copy(pIPSubGroup, 0, 1);
     end;
   end;
 end;
