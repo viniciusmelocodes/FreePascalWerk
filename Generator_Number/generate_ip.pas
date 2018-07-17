@@ -123,7 +123,7 @@ begin
         exit;
       end;
 
-      Result := Copy(pIPSubGroup, 0, 1) + RandomRange(0, 10).ToString + Copy(pIPSubGroup, 0, 1);
+      Result := Copy(pIPSubGroup, 0, 1) + RandomRange(0, 10).ToString + Copy(pIPSubGroup, 2, 1);
     end;
   end;
 end;
