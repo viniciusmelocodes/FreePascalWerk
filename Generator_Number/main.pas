@@ -19,7 +19,8 @@ type
     procedure FormCreate(Sender: TObject);
   private
     procedure GenerateRandomNumbers(pNo: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
-    procedure GenerateRandomNumber(pFrom, pTo: int64; var pNumber: int64);
+    function GenerateRandomNumber(pFrom, pTo: int64): int64;
+    function GenerateRandomIP(pTemplate: string = ''): string;
   public
 
   end;
@@ -67,12 +68,21 @@ begin
   end;
 end;
 
-procedure TForm1.GenerateRandomNumber(pFrom, pTo: int64; var pNumber: int64);
+function TForm1.GenerateRandomNumber(pFrom, pTo: int64): int64;
 begin
   Randomize;
-  pNumber := RandomRange(pFrom, pTo);
+  Result := RandomRange(pFrom, pTo);
 end;
 
+function TForm1.GenerateRandomIP(pTemplate: string = ''): string;
+begin
+  if Length(pTemplate) = 0 then
+  begin
+    Result := GenerateRandomNumber(0, 256).ToString + '.' + GenerateRandomNumber(0, 256).ToString + '.' + GenerateRandomNumber(0, 256).ToString + '.' + GenerateRandomNumber(0, 256).ToString;
+    exit;
+  end;
 
+  //*.1*2.??1.1?1
+end;
 
 end.

@@ -3,12 +3,12 @@
   <ProjectSession>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="generator_number.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <UsageCount Value="21"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -17,15 +17,24 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="22"/>
-        <CursorPos X="48" Y="22"/>
-        <UsageCount Value="21"/>
+        <TopLine Value="42"/>
+        <CursorPos X="39" Y="74"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="generate_ip.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="15"/>
+        <CursorPos X="38" Y="56"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit2>
     </Units>
-    <JumpHistory Count="14" HistoryIndex="13">
+    <JumpHistory Count="19" HistoryIndex="18">
       <Position1>
         <Filename Value="main.pas"/>
       </Position1>
@@ -81,6 +90,26 @@
         <Filename Value="main.pas"/>
         <Caret Line="22" Column="69" TopLine="11"/>
       </Position14>
+      <Position15>
+        <Filename Value="main.pas"/>
+        <Caret Line="71" Column="28" TopLine="41"/>
+      </Position15>
+      <Position16>
+        <Filename Value="main.pas"/>
+        <Caret Line="22" Column="13"/>
+      </Position16>
+      <Position17>
+        <Filename Value="generate_ip.pas"/>
+        <Caret Line="34" Column="6"/>
+      </Position17>
+      <Position18>
+        <Filename Value="generate_ip.pas"/>
+        <Caret Line="26" Column="65"/>
+      </Position18>
+      <Position19>
+        <Filename Value="generate_ip.pas"/>
+        <Caret Line="33" Column="2"/>
+      </Position19>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
