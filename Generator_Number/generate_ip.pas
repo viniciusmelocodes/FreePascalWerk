@@ -16,6 +16,7 @@ type
   end;
 
 type
+  {IP template uses wildcards * or ? like in shell}
   TGenerateIP = class
   private
     _IP_Template: string;
@@ -97,33 +98,38 @@ begin
       end;
     end;
 
-    3:  //can be 111 1?1 ?1? . accept * as ?
+    3:  // accept * as ?
     begin
+      // like 111
       if (not AnsiContainsText(pIPSubGroup, '?') and not AnsiContainsText(pIPSubGroup, '*')) then
       begin
         Result := pIPSubGroup;
         exit;
       end;
 
+      // like ?1?
       if (AnsiStartsStr('?', pIPSubGroup) or AnsiStartsStr('*', pIPSubGroup)) and (AnsiEndsStr('?', pIPSubGroup) or AnsiEndsStr('*', pIPSubGroup)) then
       begin
         Result := RandomRange(1, 3).ToString + Copy(pIPSubGroup, 1, 1) + RandomRange(0, 10).ToString;
         exit;
       end;
 
+      // like ?11
       if (AnsiStartsStr('?', pIPSubGroup) or AnsiStartsStr('*', pIPSubGroup)) then
       begin
         Result := RandomRange(1, 3).ToString + Copy(pIPSubGroup, 2, Length(pIPSubGroup));
         exit;
       end;
 
+      // like 11?
       if (AnsiEndsStr('?', pIPSubGroup) or AnsiEndsStr('*', pIPSubGroup)) then
       begin
         Result := Copy(pIPSubGroup, 0, 2) + RandomRange(0, 10).ToString;
         exit;
       end;
 
-      Result := Copy(pIPSubGroup, 0, 1) + RandomRange(0, 10).ToString + Copy(pIPSubGroup, 2, 1);
+      // like 1?1 , 1*1
+      Result := Copy(pIPSubGroup, 0, 1) + RandomRange(0, 10).ToString + Copy(pIPSubGroup, 3, 1);
     end;
   end;
 end;

@@ -15,7 +15,9 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    Button1: TButton;
     Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     procedure GenerateRandomNumbers(pNo: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
@@ -46,16 +48,16 @@ begin
   end;
 
   Memo1.Append('--------');
+end;
 
-  for i := 0 to 10 do
-  begin
-    Memo1.Append(RandomRange(1, 100).ToString);
-  end;
-
+procedure TForm1.Button1Click(Sender: TObject);
+begin
   memo1.Append(GenerateRandomIP('*.*.*.*'));
   memo1.Append(GenerateRandomIP('*.1?.?1.?'));
   memo1.Append(GenerateRandomIP('*.1?1.1*1.2*'));
   memo1.Append(GenerateRandomIP('*11.111.*11.?11'));
+
+  Memo1.Append('--------');
 end;
 
 procedure TForm1.GenerateRandomNumbers(pNo: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
