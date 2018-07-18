@@ -5,7 +5,8 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, Math, generate_ip;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, Math,
+  generate_ip, generate_no;
 
 type
   TArrayIntegers64 = array of int64;
@@ -22,6 +23,7 @@ type
   private
     procedure GenerateRandomNumbers(pNo: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
     function GenerateRandomIP(pTemplate: string = ''): string;
+    function GenerateRandomNumber(pLength: byte; pTemplate: string = ''): string;
   public
 
   end;
@@ -57,6 +59,8 @@ begin
   memo1.Append(GenerateRandomIP('*.1?1.1*1.2*'));
   memo1.Append(GenerateRandomIP('*11.111.*11.?11'));
 
+  memo1.Append('x'+GenerateRandomNumber(10, ''));
+
   Memo1.Append('--------');
 end;
 
@@ -72,6 +76,16 @@ begin
   begin
     pArrayInt64[i] := RandomRange(pFrom, pTo);
   end;
+end;
+
+function TForm1.GenerateRandomNumber(pLength: byte; pTemplate: string = ''): string;
+var
+  no: TGenerateNumber;
+
+begin
+  no := TGenerateNumber.Create(pTemplate);
+  Result := no.GetNumber(pLength);
+  FreeAndNil(no);
 end;
 
 function TForm1.GenerateRandomIP(pTemplate: string = ''): string;
