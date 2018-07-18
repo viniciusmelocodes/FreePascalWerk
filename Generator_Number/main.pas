@@ -49,7 +49,7 @@ begin
     Memo1.Append(RandomRange(1, 100).ToString);
   end;
 
-  Memo1.Append('--------');
+  Memo1.Append('----x----');
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -59,9 +59,18 @@ begin
   memo1.Append(GenerateRandomIP('*.1?1.1*1.2*'));
   memo1.Append(GenerateRandomIP('*11.111.*11.?11'));
 
-  memo1.Append('x'+GenerateRandomNumber(10, ''));
+  Memo1.Append('----y----');
 
-  Memo1.Append('--------');
+  memo1.Append(GenerateRandomNumber(10, ''));
+  memo1.Append(GenerateRandomNumber(10, '*'));
+  memo1.Append(GenerateRandomNumber(10, '*1'));
+  memo1.Append(GenerateRandomNumber(10, '1*'));
+  memo1.Append(GenerateRandomNumber(10, '?*1'));
+  memo1.Append(GenerateRandomNumber(10, '?1'));
+  memo1.Append(GenerateRandomNumber(10, '?1?'));
+  memo1.Append(GenerateRandomNumber(10, '?1*'));
+
+  Memo1.Append('----z----');
 end;
 
 procedure TForm1.GenerateRandomNumbers(pNo: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
