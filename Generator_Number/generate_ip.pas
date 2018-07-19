@@ -16,7 +16,7 @@ type
   end;
 
 type
-  {IP template uses wildcards * or ? like in shell}
+  { have a Randomize; before instantiating the class. IP template uses wildcards * or ? like in shell}
   TGenerateIP = class
   private
     _IP_Template: string;
@@ -38,12 +38,22 @@ var
   ip: IPv4;
 
 begin
+  if Length(_IP_Template) = 0 then
+  begin
+    ip.a := RandomRange(0, 256).ToString;
+    ip.b := RandomRange(0, 256).ToString;
+    ip.c := RandomRange(0, 256).ToString;
+    ip.d := RandomRange(0, 256).ToString;
+
+    Result := ip.a + '.' + ip.b + '.' + ip.c + '.' + ip.d;
+    exit;
+  end;
+
   ip.a := ExtractDelimited(1, _IP_Template, ['.']);
   ip.b := ExtractDelimited(2, _IP_Template, ['.']);
   ip.c := ExtractDelimited(3, _IP_Template, ['.']);
   ip.d := ExtractDelimited(4, _IP_Template, ['.']);
 
-  Randomize;
   Result := ReturnSubGroup(ip.a) + '.' + ReturnSubGroup(ip.b) + '.' + ReturnSubGroup(ip.c) + '.' + ReturnSubGroup(ip.d);
 end;
 

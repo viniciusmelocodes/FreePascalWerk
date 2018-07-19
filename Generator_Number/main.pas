@@ -8,8 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, Math,
   generate_ip, generate_no;
 
-type
-  TArrayIntegers64 = array of int64;
+
 
 type
 
@@ -54,6 +53,8 @@ end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
+  Randomize;
+  memo1.Append(GenerateRandomIP(''));
   memo1.Append(GenerateRandomIP('*.*.*.*'));
   memo1.Append(GenerateRandomIP('*.1?.?1.?'));
   memo1.Append(GenerateRandomIP('*.1?1.1*1.2*'));
@@ -64,11 +65,12 @@ begin
   memo1.Append(GenerateRandomNumber(10, ''));
   memo1.Append(GenerateRandomNumber(10, '*'));
   memo1.Append(GenerateRandomNumber(10, '*1'));
-  memo1.Append(GenerateRandomNumber(10, '1*'));
-  memo1.Append(GenerateRandomNumber(10, '?*1'));
+  memo1.Append(GenerateRandomNumber(10, '*112'));
+  memo1.Append(GenerateRandomNumber(10, '777*112'));
+  memo1.Append(GenerateRandomNumber(10, '7?*1'));
   memo1.Append(GenerateRandomNumber(10, '?1'));
-  memo1.Append(GenerateRandomNumber(10, '?1?'));
-  memo1.Append(GenerateRandomNumber(10, '?1*'));
+  memo1.Append(GenerateRandomNumber(10, '00?1?'));
+  memo1.Append(GenerateRandomNumber(10, '00?1*'));
 
   Memo1.Append('----z----');
 end;
@@ -100,21 +102,8 @@ end;
 function TForm1.GenerateRandomIP(pTemplate: string = ''): string;
 var
   ip: TGenerateIP;
-  theIPv4: IPv4;
 
 begin
-  if Length(pTemplate) = 0 then
-  begin
-    Randomize;
-    theIPv4.a := RandomRange(0, 256).ToString;
-    theIPv4.b := RandomRange(0, 256).ToString;
-    theIPv4.c := RandomRange(0, 256).ToString;
-    theIPv4.d := RandomRange(0, 256).ToString;
-
-    Result := theIPv4.a + '.' + theIPv4.b + '.' + theIPv4.c + '.' + theIPv4.d;
-    exit;
-  end;
-
   //*.1*2.??1.1?1
   ip := TGenerateIP.Create(pTemplate);
   Result := ip.GetIP();

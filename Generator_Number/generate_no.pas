@@ -8,6 +8,10 @@ uses
   Classes, SysUtils, Math;
 
 type
+  TArrayIntegers64 = array of int64;
+
+type
+  { have a Randomize; before instantiating the class. number template uses wildcards * or ? like in shell}
   TGenerateNumber = class
   private
     _Number_Template: string;
@@ -15,6 +19,7 @@ type
   public
     constructor Create(pTemplate: string = '');   //ex. '00*?11? length 10
     function GetNumber(pLength: byte): string;
+    procedure GetNumbers(pHowMany: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
   end;
 
 implementation
@@ -42,9 +47,7 @@ begin
     exit;
   end;
 
-  Randomize; //just in case needed. so it is not called to often
-
-  for i := 0 to pLength - 1 do
+  for i := 0 to Length(_Number_Template) - 1 do
   begin
     rune := copy(_Number_Template, i + 1, 1);
 
@@ -53,8 +56,10 @@ begin
       case rune of
         '*':
         begin
-          legal_length := pLength - Length(theNumber) - i;
-          theNumber := theNumber + GenerateRunes(legal_length);
+          legal_length := pLength - (Length(_Number_Template) - i - 1) - Length(theNumber);
+
+          if legal_length > 0 then
+            theNumber := theNumber + GenerateRunes(legal_length);
         end;
         '?':
         begin
@@ -70,13 +75,24 @@ begin
   Result := theNumber;
 end;
 
+procedure TGenerateNumber.GetNumbers(pHowMany: word; pFrom, pTo: int64; var pArrayInt64: TArrayIntegers64);
+var
+  i: word;
+
+begin
+  SetLength(pArrayInt64, pHowMany);
+
+  for i := Low(pArrayInt64) to High(pArrayInt64) do
+  begin
+    pArrayInt64[i] := RandomRange(pFrom, pTo);
+  end;
+end;
+
 function TGenerateNumber.GenerateRunes(pLength: byte): string;
 var
   i: byte;
 
 begin
-  Randomize;
-
   Result := '';
 
   for i := 0 to pLength - 1 do
