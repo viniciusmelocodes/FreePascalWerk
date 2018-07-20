@@ -13,9 +13,11 @@ type
    TGenerator = record
      GeneratorType: TGeneratorTypes;
      GeneratorTemplate: string;
+     GeneratedLength: byte;
+     UIPosition: byte;
    end;
 
-
+   TGenerators = array of TGenerator;
 
 implementation
 
