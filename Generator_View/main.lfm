@@ -1,55 +1,37 @@
 object Form1: TForm1
   Left = 341
-  Height = 320
+  Height = 496
   Top = 214
-  Width = 500
+  Width = 550
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   BorderWidth = 2
   Caption = 'Event Generator'
-  ClientHeight = 320
-  ClientWidth = 500
+  ClientHeight = 496
+  ClientWidth = 550
   Color = 14724992
   DesignTimePPI = 103
   OnCreate = FormCreate
-  OnResize = FormResize
   LCLVersion = '1.8.4.0'
-  object ListBox1: TListBox
-    Left = 2
-    Height = 316
-    Top = 2
-    Width = 192
-    Align = alLeft
-    ItemHeight = 0
-    ScrollWidth = 190
-    TabOrder = 0
-    TopIndex = -1
-  end
-  object ComboBox1: TComboBox
-    Left = 304
-    Height = 30
-    Top = 80
-    Width = 174
-    ItemHeight = 0
-    TabOrder = 1
-  end
   object Label1: TLabel
-    Left = 215
+    AnchorSideTop.Control = Owner
+    Left = 256
     Height = 30
-    Top = 24
+    Top = 28
     Width = 78
+    Anchors = []
     AutoSize = False
+    BorderSpacing.Top = 17
     Caption = 'Name:'
     Font.Height = -20
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
-    OnClick = Label1Click
   end
   object BCTrackbarUpdown1: TBCTrackbarUpdown
-    Left = 414
+    Left = 343
     Height = 33
-    Top = 195
+    Top = 185
     Width = 64
     BarExponent = 1
     Increment = 1
@@ -156,41 +138,45 @@ object Form1: TForm1
     Font.Name = 'Arial'
     HasTrackBar = False
     ArrowColor = clDefault
-    TabOrder = 2
+    TabOrder = 0
     TabStop = True
     UseDockManager = False
   end
-  object BCDEdit1: TBCDEdit
-    Left = 304
-    Height = 35
-    Top = 144
+  object EditMask: TBCDEdit
+    Left = 343
+    Height = 26
+    Top = 134
     Width = 174
+    AutoSize = True
     DrawStyle = dsExtra2
-    OnChange = BCDEdit1Change
   end
   object BCDButton1: TBCDButton
-    Left = 216
+    Left = 343
     Height = 27
-    Top = 272
+    Top = 396
     Width = 77
+    AutoSize = True
     Caption = 'Add'
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 2
     TabStop = True
   end
-  object BCDEdit2: TBCDEdit
-    Left = 304
-    Height = 35
-    Top = 24
+  object EditName: TBCDEdit
+    AnchorSideTop.Control = Owner
+    Left = 343
+    Height = 26
+    Top = 28
     Width = 174
+    Anchors = []
+    AutoSize = True
     DrawStyle = dsKDEPlastique
   end
   object Label3: TLabel
-    Left = 215
+    Left = 256
     Height = 30
-    Top = 149
+    Top = 132
     Width = 78
     AutoSize = False
     Caption = 'Mask:'
@@ -198,12 +184,11 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
-    OnClick = Label1Click
   end
   object Label4: TLabel
-    Left = 215
+    Left = 256
     Height = 30
-    Top = 200
+    Top = 187
     Width = 78
     AutoSize = False
     Caption = 'Length:'
@@ -211,12 +196,11 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
-    OnClick = Label1Click
   end
   object Label2: TLabel
-    Left = 216
+    Left = 256
     Height = 30
-    Top = 82
+    Top = 81
     Width = 78
     AutoSize = False
     Caption = 'Type:'
@@ -224,6 +208,122 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
-    OnClick = Label1Click
+  end
+  object BCListBox1: TBCListBox
+    Left = 2
+    Height = 492
+    Top = 2
+    Width = 230
+    Align = alLeft
+    BorderStyle = bsNone
+    ItemHeight = 56
+    ScrollWidth = 230
+    Style = lbOwnerDrawFixed
+    TabOrder = 4
+    TopIndex = -1
+  end
+  object GenType: TComboBox
+    Left = 343
+    Height = 30
+    Top = 79
+    Width = 174
+    ItemHeight = 0
+    TabOrder = 5
+  end
+  object EditFrom: TBCDEdit
+    Left = 343
+    Height = 26
+    Top = 243
+    Width = 174
+    AutoSize = True
+    DrawStyle = dsExtra2
+  end
+  object EditTo: TBCDEdit
+    Left = 343
+    Height = 26
+    Top = 294
+    Width = 174
+    AutoSize = True
+    DrawStyle = dsExtra2
+  end
+  object Label5: TLabel
+    Left = 256
+    Height = 30
+    Top = 247
+    Width = 78
+    AutoSize = False
+    Caption = 'From:'
+    Font.Height = -20
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 256
+    Height = 30
+    Top = 293
+    Width = 78
+    AutoSize = False
+    Caption = 'To:'
+    Font.Height = -20
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditRows: TBCDEdit
+    Left = 343
+    Height = 26
+    Top = 345
+    Width = 174
+    AutoSize = True
+    DrawStyle = dsExtra2
+  end
+  object Label7: TLabel
+    Left = 256
+    Height = 30
+    Top = 344
+    Width = 78
+    AutoSize = False
+    Caption = 'Rows:'
+    Font.Height = -20
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BCDButton2: TBCDButton
+    Left = 440
+    Height = 27
+    Top = 396
+    Width = 77
+    Caption = 'Go'
+    DrawStyle = dsDefault
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 9
+    TabStop = True
+  end
+  object BCDButton3: TBCDButton
+    Left = 343
+    Height = 27
+    Top = 448
+    Width = 77
+    Caption = 'Save'
+    DrawStyle = dsDefault
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 10
+    TabStop = True
+  end
+  object BCDButton4: TBCDButton
+    Left = 440
+    Height = 27
+    Top = 448
+    Width = 77
+    Caption = 'Load'
+    DrawStyle = dsDefault
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 11
+    TabStop = True
   end
 end

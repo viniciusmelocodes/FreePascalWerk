@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, ComCtrls, BCTrackbarUpdown, BCLabel, BGRACustomDrawn;
+  StdCtrls, ComCtrls, BCTrackbarUpdown, BCLabel, BGRACustomDrawn, BCListBox,
+  ECEditBtns;
 
 type
 
@@ -14,19 +15,26 @@ type
 
   TForm1 = class(TForm)
     BCDButton1: TBCDButton;
-    BCDEdit1: TBCDEdit;
-    BCDEdit2: TBCDEdit;
+    BCDButton2: TBCDButton;
+    BCDButton3: TBCDButton;
+    BCDButton4: TBCDButton;
+    EditRows: TBCDEdit;
+    GenType: TComboBox;
+    EditMask: TBCDEdit;
+    EditFrom: TBCDEdit;
+    EditTo: TBCDEdit;
+    EditName: TBCDEdit;
+    BCListBox1: TBCListBox;
     BCTrackbarUpdown1: TBCTrackbarUpdown;
-    ComboBox1: TComboBox;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    ListBox1: TListBox;
-    procedure BCDEdit1Change(Sender: TObject);
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+
     procedure FormCreate(Sender: TObject);
-    procedure FormResize(Sender: TObject);
-    procedure Label1Click(Sender: TObject);
   private
 
   public
@@ -43,23 +51,15 @@ implementation
 { TForm1 }
 
 procedure TForm1.FormCreate(Sender: TObject);
+var
+  font_size: integer = 13;
+
 begin
-
-end;
-
-procedure TForm1.BCDEdit1Change(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.FormResize(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.Label1Click(Sender: TObject);
-begin
-
+  EditMask.Font.Size := font_size;
+  EditName.Font.Size := font_size;
+  EditFrom.Font.Size := font_size;
+  EditTo.Font.Size := font_size;
+  EditRows.Font.Size := font_size;
 end;
 
 end.
