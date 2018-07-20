@@ -14,10 +14,10 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    BCDButton1: TBCDButton;
-    BCDButton2: TBCDButton;
-    BCDButton3: TBCDButton;
-    BCDButton4: TBCDButton;
+    BtnAddField: TBCDButton;
+    BtnRenderRows: TBCDButton;
+    BtnSaveConfig: TBCDButton;
+    BtnLoadConfig: TBCDButton;
     EditRows: TBCDEdit;
     GenType: TComboBox;
     EditMask: TBCDEdit;
@@ -60,6 +60,13 @@ begin
   EditFrom.Font.Size := font_size;
   EditTo.Font.Size := font_size;
   EditRows.Font.Size := font_size;
+
+  GenType.Font.Size := font_size - 1;
+
+  BtnAddField.Font.Size := font_size;
+  BtnRenderRows.Font.Size := font_size;
+  BtnSaveConfig.Font.Size := font_size;
+  BtnLoadConfig.Font.Size := font_size;
 end;
 
 end.

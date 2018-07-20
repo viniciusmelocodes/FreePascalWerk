@@ -17,7 +17,7 @@ object Form1: TForm1
     AnchorSideTop.Control = Owner
     Left = 256
     Height = 30
-    Top = 28
+    Top = 76
     Width = 78
     Anchors = []
     AutoSize = False
@@ -31,7 +31,7 @@ object Form1: TForm1
   object BCTrackbarUpdown1: TBCTrackbarUpdown
     Left = 343
     Height = 33
-    Top = 185
+    Top = 181
     Width = 64
     BarExponent = 1
     Increment = 1
@@ -138,19 +138,19 @@ object Form1: TForm1
     Font.Name = 'Arial'
     HasTrackBar = False
     ArrowColor = clDefault
-    TabOrder = 0
+    TabOrder = 3
     TabStop = True
     UseDockManager = False
   end
   object EditMask: TBCDEdit
     Left = 343
     Height = 26
-    Top = 134
+    Top = 130
     Width = 174
     AutoSize = True
     DrawStyle = dsExtra2
   end
-  object BCDButton1: TBCDButton
+  object BtnAddField: TBCDButton
     Left = 343
     Height = 27
     Top = 396
@@ -160,14 +160,14 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 7
     TabStop = True
   end
   object EditName: TBCDEdit
     AnchorSideTop.Control = Owner
-    Left = 343
+    Left = 344
     Height = 26
-    Top = 28
+    Top = 79
     Width = 174
     Anchors = []
     AutoSize = True
@@ -176,7 +176,7 @@ object Form1: TForm1
   object Label3: TLabel
     Left = 256
     Height = 30
-    Top = 132
+    Top = 126
     Width = 78
     AutoSize = False
     Caption = 'Mask:'
@@ -188,7 +188,7 @@ object Form1: TForm1
   object Label4: TLabel
     Left = 256
     Height = 30
-    Top = 187
+    Top = 184
     Width = 78
     AutoSize = False
     Caption = 'Length:'
@@ -200,7 +200,7 @@ object Form1: TForm1
   object Label2: TLabel
     Left = 256
     Height = 30
-    Top = 81
+    Top = 24
     Width = 78
     AutoSize = False
     Caption = 'Type:'
@@ -219,21 +219,21 @@ object Form1: TForm1
     ItemHeight = 56
     ScrollWidth = 230
     Style = lbOwnerDrawFixed
-    TabOrder = 4
+    TabOrder = 11
     TopIndex = -1
   end
   object GenType: TComboBox
-    Left = 343
+    Left = 344
     Height = 30
-    Top = 79
+    Top = 24
     Width = 174
     ItemHeight = 0
-    TabOrder = 5
+    TabOrder = 0
   end
   object EditFrom: TBCDEdit
     Left = 343
     Height = 26
-    Top = 243
+    Top = 239
     Width = 174
     AutoSize = True
     DrawStyle = dsExtra2
@@ -241,7 +241,7 @@ object Form1: TForm1
   object EditTo: TBCDEdit
     Left = 343
     Height = 26
-    Top = 294
+    Top = 290
     Width = 174
     AutoSize = True
     DrawStyle = dsExtra2
@@ -249,7 +249,7 @@ object Form1: TForm1
   object Label5: TLabel
     Left = 256
     Height = 30
-    Top = 247
+    Top = 235
     Width = 78
     AutoSize = False
     Caption = 'From:'
@@ -261,7 +261,7 @@ object Form1: TForm1
   object Label6: TLabel
     Left = 256
     Height = 30
-    Top = 293
+    Top = 288
     Width = 78
     AutoSize = False
     Caption = 'To:'
@@ -273,7 +273,7 @@ object Form1: TForm1
   object EditRows: TBCDEdit
     Left = 343
     Height = 26
-    Top = 345
+    Top = 341
     Width = 174
     AutoSize = True
     DrawStyle = dsExtra2
@@ -281,7 +281,7 @@ object Form1: TForm1
   object Label7: TLabel
     Left = 256
     Height = 30
-    Top = 344
+    Top = 341
     Width = 78
     AutoSize = False
     Caption = 'Rows:'
@@ -290,19 +290,19 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
   end
-  object BCDButton2: TBCDButton
+  object BtnRenderRows: TBCDButton
     Left = 440
     Height = 27
-    Top = 396
+    Top = 392
     Width = 77
     Caption = 'Go'
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
     TabStop = True
   end
-  object BCDButton3: TBCDButton
+  object BtnSaveConfig: TBCDButton
     Left = 343
     Height = 27
     Top = 448
@@ -311,10 +311,10 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
     TabStop = True
   end
-  object BCDButton4: TBCDButton
+  object BtnLoadConfig: TBCDButton
     Left = 440
     Height = 27
     Top = 448
@@ -323,7 +323,7 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 11
+    TabOrder = 10
     TabStop = True
   end
 end
