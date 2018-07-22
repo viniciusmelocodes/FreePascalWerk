@@ -12,8 +12,12 @@ type
 
    TGenerator = record
      GeneratorType: TGeneratorTypes;
-     GeneratorTemplate: string;
+     Name: string;
+     GeneratorMask: string;
      GeneratedLength: byte;
+     FromValue: string;
+     ToValue: string;
+     NoRows: string;
      UIPosition: byte;
    end;
 

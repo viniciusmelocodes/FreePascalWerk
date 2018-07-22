@@ -28,7 +28,7 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
   end
-  object BCTrackbarUpdown1: TBCTrackbarUpdown
+  object UpDownLength: TBCTrackbarUpdown
     Left = 343
     Height = 33
     Top = 181
@@ -138,7 +138,7 @@ object Form1: TForm1
     Font.Name = 'Arial'
     HasTrackBar = False
     ArrowColor = clDefault
-    TabOrder = 3
+    TabOrder = 2
     TabStop = True
     UseDockManager = False
   end
@@ -153,14 +153,15 @@ object Form1: TForm1
   object BtnAddField: TBCDButton
     Left = 343
     Height = 27
-    Top = 396
+    Top = 392
     Width = 77
     AutoSize = True
     Caption = 'Add'
     DrawStyle = dsDefault
     Font.Style = [fsBold]
+    OnClick = BtnAddFieldClick
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     TabStop = True
   end
   object EditName: TBCDEdit
@@ -208,19 +209,6 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
-  end
-  object BCListBox1: TBCListBox
-    Left = 2
-    Height = 492
-    Top = 2
-    Width = 230
-    Align = alLeft
-    BorderStyle = bsNone
-    ItemHeight = 56
-    ScrollWidth = 230
-    Style = lbOwnerDrawFixed
-    TabOrder = 11
-    TopIndex = -1
   end
   object GenType: TComboBox
     Left = 344
@@ -299,7 +287,7 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
     TabStop = True
   end
   object BtnSaveConfig: TBCDButton
@@ -311,7 +299,7 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
     TabStop = True
   end
   object BtnLoadConfig: TBCDButton
@@ -323,7 +311,19 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
     TabStop = True
+  end
+  object ListGenerators: TListBox
+    Left = 2
+    Height = 492
+    Top = 2
+    Width = 246
+    Align = alLeft
+    ItemHeight = 0
+    MultiSelect = True
+    ScrollWidth = 244
+    TabOrder = 11
+    TopIndex = -1
   end
 end
