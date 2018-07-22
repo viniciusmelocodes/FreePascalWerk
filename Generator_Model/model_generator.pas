@@ -17,7 +17,6 @@ type
      GeneratedLength: byte;
      FromValue: string;
      ToValue: string;
-     NoRows: string;
      UIPosition: byte;
    end;
 

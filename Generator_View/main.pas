@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, ComCtrls, BCTrackbarUpdown, BGRACustomDrawn, BCListBox,
   typinfo,
-  model_generator;
+  model_generator, generate_no, generate_ip;
 
 type
 
@@ -19,13 +19,14 @@ type
     BtnRenderRows: TBCDButton;
     BtnSaveConfig: TBCDButton;
     BtnLoadConfig: TBCDButton;
+    UpDownLength: TBCDEdit;
     EditRows: TBCDEdit;
     GenType: TComboBox;
     EditMask: TBCDEdit;
     EditFrom: TBCDEdit;
     EditTo: TBCDEdit;
     EditName: TBCDEdit;
-    UpDownLength: TBCTrackbarUpdown;
+    UpDown1: TUpDown;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -36,12 +37,14 @@ type
     ListGenerators: TListBox;
 
     procedure BtnAddFieldClick(Sender: TObject);
+    procedure BtnRenderRowsClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
 
   private
     _Generators: TGenerators;
     procedure AddGenerator(pGenerator: TGenerator);
     procedure RenderGeneratorList(pGenerators: TGenerators; pTarget: TListBox);
+    procedure RenderFile(pGenerators: TGenerators; pRows: int64; pTarget: string);
   end;
 
 var
@@ -81,7 +84,6 @@ end;
 procedure TForm1.BtnAddFieldClick(Sender: TObject);
 var
   g: TGenerator;
-  rows: int64;
 
 begin
   g.GeneratorType := TGeneratorTypes(GenType.ItemIndex);
@@ -90,16 +92,21 @@ begin
   g.GeneratedLength := UpDownLength.Text.ToInteger;
   g.FromValue := EditFrom.Text;
   g.ToValue := EditTo.Text;
-
-  if not TryStrToInt64(EditRows.Text, rows) then
-    g.NoRows := '1'
-  else
-    g.NoRows := EditRows.Text;
-
   g.UIPosition := ListGenerators.Count;
 
   AddGenerator(g);
   RenderGeneratorList(_Generators, ListGenerators);
+end;
+
+procedure TForm1.BtnRenderRowsClick(Sender: TObject);
+var
+  rows: int64;
+
+begin
+  if not TryStrToInt64(EditRows.Text, rows) then
+    rows := 1;
+
+  RenderFile(_Generators, rows, 'results.csv');
 end;
 
 procedure TForm1.AddGenerator(pGenerator: TGenerator);
@@ -109,9 +116,9 @@ begin
   _Generators[High(_Generators)].GeneratorType := pGenerator.GeneratorType;
   _Generators[High(_Generators)].Name := pGenerator.Name;
   _Generators[High(_Generators)].GeneratorMask := pGenerator.GeneratorMask;
+  _Generators[High(_Generators)].GeneratedLength := pGenerator.GeneratedLength;
   _Generators[High(_Generators)].FromValue := pGenerator.FromValue;
   _Generators[High(_Generators)].ToValue := pGenerator.ToValue;
-  _Generators[High(_Generators)].NoRows := pGenerator.NoRows;
   _Generators[High(_Generators)].UIPosition := pGenerator.UIPosition;
 end;
 
@@ -136,6 +143,54 @@ begin
   end;
 
   FreeAndNil(toSort);
+end;
+
+procedure TForm1.RenderFile(pGenerators: TGenerators; pRows: int64; pTarget: string);
+var
+  i: byte;
+  j: int64;
+  contentField: string;
+  contentRow: string;
+  contentRows: TStringList;
+  gNumber: TGenerateNumber;
+  sep: string;
+
+begin
+  contentRows := TStringList.Create;
+
+  for j := 0 to pRows do
+  begin
+    contentRow := '';
+    sep := '';
+
+    for i := Low(pGenerators) to High(pGenerators) do
+    begin
+      contentField := '';
+
+      case Ord(pGenerators[i].GeneratorType) of
+        0:
+        begin
+
+        end;
+        1:
+        begin
+          gNumber := TGenerateNumber.Create(pGenerators[i].GeneratorMask);
+          contentField := gNumber.GetNumber(pGenerators[i].GeneratedLength);
+          FreeAndNil(gNumber);
+        end;
+      end;
+
+      if ((i > 0) and (i < High(pGenerators))) then
+        sep := ',';
+
+      contentRow := contentField + sep;
+    end;
+
+    contentRows.Append(contentRow);
+  end;
+
+  contentRows.SaveToFile(pTarget);
+  FreeAndNil(contentRows);
 end;
 
 end.

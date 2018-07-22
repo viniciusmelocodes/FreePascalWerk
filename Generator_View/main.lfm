@@ -28,120 +28,6 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
   end
-  object UpDownLength: TBCTrackbarUpdown
-    Left = 343
-    Height = 33
-    Top = 181
-    Width = 64
-    BarExponent = 1
-    Increment = 1
-    LongTimeInterval = 1
-    MinValue = 0
-    MaxValue = 20
-    Value = 15
-    ShortTimeInterval = 1
-    Background.Color = clWindow
-    Background.ColorOpacity = 255
-    Background.Gradient1.StartColor = clWhite
-    Background.Gradient1.StartColorOpacity = 255
-    Background.Gradient1.DrawMode = dmSet
-    Background.Gradient1.EndColor = clBlack
-    Background.Gradient1.EndColorOpacity = 255
-    Background.Gradient1.ColorCorrection = True
-    Background.Gradient1.GradientType = gtLinear
-    Background.Gradient1.Point1XPercent = 0
-    Background.Gradient1.Point1YPercent = 0
-    Background.Gradient1.Point2XPercent = 0
-    Background.Gradient1.Point2YPercent = 100
-    Background.Gradient1.Sinus = False
-    Background.Gradient2.StartColor = clWhite
-    Background.Gradient2.StartColorOpacity = 255
-    Background.Gradient2.DrawMode = dmSet
-    Background.Gradient2.EndColor = clBlack
-    Background.Gradient2.EndColorOpacity = 255
-    Background.Gradient2.ColorCorrection = True
-    Background.Gradient2.GradientType = gtLinear
-    Background.Gradient2.Point1XPercent = 0
-    Background.Gradient2.Point1YPercent = 0
-    Background.Gradient2.Point2XPercent = 0
-    Background.Gradient2.Point2YPercent = 100
-    Background.Gradient2.Sinus = False
-    Background.Gradient1EndPercent = 35
-    Background.Style = bbsColor
-    ButtonBackground.Color = clBlack
-    ButtonBackground.ColorOpacity = 255
-    ButtonBackground.Gradient1.StartColor = clBtnShadow
-    ButtonBackground.Gradient1.StartColorOpacity = 255
-    ButtonBackground.Gradient1.DrawMode = dmSet
-    ButtonBackground.Gradient1.EndColor = clBtnFace
-    ButtonBackground.Gradient1.EndColorOpacity = 255
-    ButtonBackground.Gradient1.ColorCorrection = True
-    ButtonBackground.Gradient1.GradientType = gtLinear
-    ButtonBackground.Gradient1.Point1XPercent = 0
-    ButtonBackground.Gradient1.Point1YPercent = -50
-    ButtonBackground.Gradient1.Point2XPercent = 0
-    ButtonBackground.Gradient1.Point2YPercent = 50
-    ButtonBackground.Gradient1.Sinus = False
-    ButtonBackground.Gradient2.StartColor = clBtnFace
-    ButtonBackground.Gradient2.StartColorOpacity = 255
-    ButtonBackground.Gradient2.DrawMode = dmSet
-    ButtonBackground.Gradient2.EndColor = clBtnShadow
-    ButtonBackground.Gradient2.EndColorOpacity = 255
-    ButtonBackground.Gradient2.ColorCorrection = True
-    ButtonBackground.Gradient2.GradientType = gtLinear
-    ButtonBackground.Gradient2.Point1XPercent = 0
-    ButtonBackground.Gradient2.Point1YPercent = 50
-    ButtonBackground.Gradient2.Point2XPercent = 0
-    ButtonBackground.Gradient2.Point2YPercent = 150
-    ButtonBackground.Gradient2.Sinus = False
-    ButtonBackground.Gradient1EndPercent = 50
-    ButtonBackground.Style = bbsGradient
-    ButtonDownBackground.Color = clBtnShadow
-    ButtonDownBackground.ColorOpacity = 255
-    ButtonDownBackground.Gradient1.StartColor = clWhite
-    ButtonDownBackground.Gradient1.StartColorOpacity = 255
-    ButtonDownBackground.Gradient1.DrawMode = dmSet
-    ButtonDownBackground.Gradient1.EndColor = clBlack
-    ButtonDownBackground.Gradient1.EndColorOpacity = 255
-    ButtonDownBackground.Gradient1.ColorCorrection = True
-    ButtonDownBackground.Gradient1.GradientType = gtLinear
-    ButtonDownBackground.Gradient1.Point1XPercent = 0
-    ButtonDownBackground.Gradient1.Point1YPercent = 0
-    ButtonDownBackground.Gradient1.Point2XPercent = 0
-    ButtonDownBackground.Gradient1.Point2YPercent = 100
-    ButtonDownBackground.Gradient1.Sinus = False
-    ButtonDownBackground.Gradient2.StartColor = clWhite
-    ButtonDownBackground.Gradient2.StartColorOpacity = 255
-    ButtonDownBackground.Gradient2.DrawMode = dmSet
-    ButtonDownBackground.Gradient2.EndColor = clBlack
-    ButtonDownBackground.Gradient2.EndColorOpacity = 255
-    ButtonDownBackground.Gradient2.ColorCorrection = True
-    ButtonDownBackground.Gradient2.GradientType = gtLinear
-    ButtonDownBackground.Gradient2.Point1XPercent = 0
-    ButtonDownBackground.Gradient2.Point1YPercent = 0
-    ButtonDownBackground.Gradient2.Point2XPercent = 0
-    ButtonDownBackground.Gradient2.Point2YPercent = 100
-    ButtonDownBackground.Gradient2.Sinus = False
-    ButtonDownBackground.Gradient1EndPercent = 35
-    ButtonDownBackground.Style = bbsColor
-    Border.Color = clWindowText
-    Border.ColorOpacity = 255
-    Border.LightColor = clWhite
-    Border.LightOpacity = 255
-    Border.LightWidth = 0
-    Border.Style = bboSolid
-    Border.Width = 1
-    Rounding.RoundX = 1
-    Rounding.RoundY = 1
-    Rounding.RoundOptions = []
-    Font.Color = clWindowText
-    Font.Name = 'Arial'
-    HasTrackBar = False
-    ArrowColor = clDefault
-    TabOrder = 2
-    TabStop = True
-    UseDockManager = False
-  end
   object EditMask: TBCDEdit
     Left = 343
     Height = 26
@@ -151,9 +37,9 @@ object Form1: TForm1
     DrawStyle = dsExtra2
   end
   object BtnAddField: TBCDButton
-    Left = 343
+    Left = 499
     Height = 27
-    Top = 392
+    Top = 336
     Width = 77
     AutoSize = True
     Caption = 'Add'
@@ -161,7 +47,7 @@ object Form1: TForm1
     Font.Style = [fsBold]
     OnClick = BtnAddFieldClick
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 5
     TabStop = True
   end
   object EditName: TBCDEdit
@@ -261,15 +147,15 @@ object Form1: TForm1
   object EditRows: TBCDEdit
     Left = 343
     Height = 26
-    Top = 341
-    Width = 231
+    Top = 384
+    Width = 121
     AutoSize = True
     DrawStyle = dsExtra2
   end
   object Label7: TLabel
     Left = 256
     Height = 30
-    Top = 341
+    Top = 384
     Width = 78
     AutoSize = False
     Caption = 'Rows:'
@@ -279,19 +165,20 @@ object Form1: TForm1
     ParentFont = False
   end
   object BtnRenderRows: TBCDButton
-    Left = 440
+    Left = 499
     Height = 27
-    Top = 392
+    Top = 384
     Width = 77
     Caption = 'Go'
     DrawStyle = dsDefault
     Font.Style = [fsBold]
+    OnClick = BtnRenderRowsClick
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     TabStop = True
   end
   object BtnSaveConfig: TBCDButton
-    Left = 343
+    Left = 368
     Height = 27
     Top = 448
     Width = 77
@@ -299,11 +186,11 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
     TabStop = True
   end
   object BtnLoadConfig: TBCDButton
-    Left = 440
+    Left = 464
     Height = 27
     Top = 448
     Width = 77
@@ -311,7 +198,7 @@ object Form1: TForm1
     DrawStyle = dsDefault
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
     TabStop = True
   end
   object ListGenerators: TListBox
@@ -323,7 +210,29 @@ object Form1: TForm1
     ItemHeight = 0
     MultiSelect = True
     ScrollWidth = 244
-    TabOrder = 11
+    TabOrder = 10
     TopIndex = -1
+  end
+  object UpDown1: TUpDown
+    Left = 482
+    Height = 33
+    Top = 183
+    Width = 18
+    Min = 0
+    Position = 0
+    TabOrder = 11
+    Wrap = False
+  end
+  object UpDownLength: TBCDEdit
+    Left = 424
+    Height = 26
+    Top = 184
+    Width = 55
+    AutoSize = True
+    DrawStyle = dsExtra2
+    Lines.Strings = (
+      '1'
+    )
+    ReadOnly = True
   end
 end
