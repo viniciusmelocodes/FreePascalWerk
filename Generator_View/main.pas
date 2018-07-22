@@ -40,7 +40,8 @@ type
 
   private
     _Generators: TGenerators;
-    procedure AddGenerator(pType: TGeneratorTypes; pName, pMask: string; pLength: byte; pFromValue, pToValue, pRows: string; pUIPosition: byte);
+    procedure AddGenerator(pGenerator: TGenerator);
+    procedure RenderGeneratorList(pGenerators: TGenerators; pTarget: TListBox);
   end;
 
 var
@@ -78,23 +79,63 @@ begin
 end;
 
 procedure TForm1.BtnAddFieldClick(Sender: TObject);
-begin
-  ListGenerators.Items.Add('x');
+var
+  g: TGenerator;
+  rows: int64;
 
-  AddGenerator(TGeneratorTypes(GenType.ItemIndex), EditName.Text, EditMask.Text, UpDownLength.Text.ToInteger, EditFrom.Text, EditTo.Text, EditRows.Text, ListGenerators.Count);
+begin
+  g.GeneratorType := TGeneratorTypes(GenType.ItemIndex);
+  g.Name := EditName.Text;
+  g.GeneratorMask := EditMask.Text;
+  g.GeneratedLength := UpDownLength.Text.ToInteger;
+  g.FromValue := EditFrom.Text;
+  g.ToValue := EditTo.Text;
+
+  if not TryStrToInt64(EditRows.Text, rows) then
+    g.NoRows := '1'
+  else
+    g.NoRows := EditRows.Text;
+
+  g.UIPosition := ListGenerators.Count;
+
+  AddGenerator(g);
+  RenderGeneratorList(_Generators, ListGenerators);
 end;
 
-procedure TForm1.AddGenerator(pType: TGeneratorTypes; pName, pMask: string; pLength: byte; pFromValue, pToValue, pRows: string; pUIPosition: byte);
+procedure TForm1.AddGenerator(pGenerator: TGenerator);
 begin
   SetLength(_Generators, Length(_Generators) + 1);
 
-  _Generators[High(_Generators)].GeneratorType := pType;
-  _Generators[High(_Generators)].Name := pName;
-  _Generators[High(_Generators)].GeneratorMask := pMask;
-  _Generators[High(_Generators)].FromValue := pFromValue;
-  _Generators[High(_Generators)].ToValue := pToValue;
-  _Generators[High(_Generators)].NoRows := pRows;
-  _Generators[High(_Generators)].UIPosition := pUIPosition;
+  _Generators[High(_Generators)].GeneratorType := pGenerator.GeneratorType;
+  _Generators[High(_Generators)].Name := pGenerator.Name;
+  _Generators[High(_Generators)].GeneratorMask := pGenerator.GeneratorMask;
+  _Generators[High(_Generators)].FromValue := pGenerator.FromValue;
+  _Generators[High(_Generators)].ToValue := pGenerator.ToValue;
+  _Generators[High(_Generators)].NoRows := pGenerator.NoRows;
+  _Generators[High(_Generators)].UIPosition := pGenerator.UIPosition;
+end;
+
+procedure TForm1.RenderGeneratorList(pGenerators: TGenerators; pTarget: TListBox);
+var
+  i: byte;
+  toSort: TStringList;
+
+begin
+  toSort := TStringList.Create;
+  toSort.Sorted := True;
+
+  for i := Low(pGenerators) to High(pGenerators) do
+  begin
+    toSort.Append(pGenerators[i].UIPosition.ToString + ',' + i.ToString);
+  end;
+
+  pTarget.Clear;
+  for i := 0 to toSort.Count - 1 do
+  begin
+    pTarget.Items.Append(pGenerators[Copy(toSort[i], Pos(toSort[i], ','), 1).ToInteger].Name);
+  end;
+
+  FreeAndNil(toSort);
 end;
 
 end.

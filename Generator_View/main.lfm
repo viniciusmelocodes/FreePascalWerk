@@ -2,13 +2,13 @@ object Form1: TForm1
   Left = 341
   Height = 496
   Top = 214
-  Width = 550
+  Width = 589
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   BorderWidth = 2
   Caption = 'Event Generator'
   ClientHeight = 496
-  ClientWidth = 550
+  ClientWidth = 589
   Color = 14724992
   DesignTimePPI = 103
   OnCreate = FormCreate
@@ -146,7 +146,7 @@ object Form1: TForm1
     Left = 343
     Height = 26
     Top = 130
-    Width = 174
+    Width = 231
     AutoSize = True
     DrawStyle = dsExtra2
   end
@@ -169,7 +169,7 @@ object Form1: TForm1
     Left = 344
     Height = 26
     Top = 79
-    Width = 174
+    Width = 232
     Anchors = []
     AutoSize = True
     DrawStyle = dsKDEPlastique
@@ -214,7 +214,7 @@ object Form1: TForm1
     Left = 344
     Height = 30
     Top = 24
-    Width = 174
+    Width = 230
     ItemHeight = 0
     TabOrder = 0
   end
@@ -222,7 +222,7 @@ object Form1: TForm1
     Left = 343
     Height = 26
     Top = 239
-    Width = 174
+    Width = 233
     AutoSize = True
     DrawStyle = dsExtra2
   end
@@ -230,7 +230,7 @@ object Form1: TForm1
     Left = 343
     Height = 26
     Top = 290
-    Width = 174
+    Width = 233
     AutoSize = True
     DrawStyle = dsExtra2
   end
@@ -262,7 +262,7 @@ object Form1: TForm1
     Left = 343
     Height = 26
     Top = 341
-    Width = 174
+    Width = 231
     AutoSize = True
     DrawStyle = dsExtra2
   end
