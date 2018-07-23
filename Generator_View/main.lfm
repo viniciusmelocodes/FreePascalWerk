@@ -185,6 +185,7 @@ object Form1: TForm1
     Caption = 'Save'
     DrawStyle = dsDefault
     Font.Style = [fsBold]
+    OnClick = BtnSaveConfigClick
     ParentFont = False
     TabOrder = 7
     TabStop = True

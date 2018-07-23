@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, ComCtrls, BCTrackbarUpdown, BGRACustomDrawn, BCListBox,
   typinfo,
-  model_generator, generate_no, generate_ip;
+  model_generator, generate_no, generate_ip, gen_to_file;
 
 type
 
@@ -38,6 +38,7 @@ type
 
     procedure BtnAddFieldClick(Sender: TObject);
     procedure BtnRenderRowsClick(Sender: TObject);
+    procedure BtnSaveConfigClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
 
   private
@@ -107,6 +108,16 @@ begin
     rows := 1;
 
   RenderFile(_Generators, rows, 'results.csv');
+end;
+
+procedure TForm1.BtnSaveConfigClick(Sender: TObject);
+var
+  u: TGeneratorUtils;
+
+begin
+  u := TGeneratorUtils.Create('generator.csv');
+  u.GeneratorsSave(_Generators);
+  FreeAndNil(u);
 end;
 
 procedure TForm1.AddGenerator(pGenerator: TGenerator);
