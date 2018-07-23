@@ -37,6 +37,7 @@ type
     ListGenerators: TListBox;
 
     procedure BtnAddFieldClick(Sender: TObject);
+    procedure BtnLoadConfigClick(Sender: TObject);
     procedure BtnRenderRowsClick(Sender: TObject);
     procedure BtnSaveConfigClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -91,11 +92,33 @@ begin
   g.Name := EditName.Text;
   g.GeneratorMask := EditMask.Text;
   g.GeneratedLength := UpDownLength.Text.ToInteger;
-  g.FromValue := EditFrom.Text;
-  g.ToValue := EditTo.Text;
+
+  if Length(EditFrom.Text) = 0 then
+    g.FromValue := ''
+  else
+    g.FromValue := EditFrom.Text;
+
+    if Length(EditTo.Text) = 0 then
+    g.ToValue := ''
+  else
+    g.ToValue := EditTo.Text;
+
   g.UIPosition := ListGenerators.Count;
 
   AddGenerator(g);
+  RenderGeneratorList(_Generators, ListGenerators);
+end;
+
+procedure TForm1.BtnLoadConfigClick(Sender: TObject);
+var
+  u: TGeneratorUtils;
+
+begin
+
+  u := TGeneratorUtils.Create('generator.csv');
+  _Generators := u.GeneratorsLoad();
+  FreeAndNil(u);
+
   RenderGeneratorList(_Generators, ListGenerators);
 end;
 

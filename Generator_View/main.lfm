@@ -198,6 +198,7 @@ object Form1: TForm1
     Caption = 'Load'
     DrawStyle = dsDefault
     Font.Style = [fsBold]
+    OnClick = BtnLoadConfigClick
     ParentFont = False
     TabOrder = 8
     TabStop = True

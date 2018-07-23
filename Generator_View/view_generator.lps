@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="10">
+    <Units Count="11">
       <Unit0>
         <Filename Value="view_generator.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -11,7 +11,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="35"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -19,9 +19,9 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="92"/>
-        <CursorPos X="15" Y="119"/>
-        <UsageCount Value="34"/>
+        <TopLine Value="82"/>
+        <CursorPos X="56" Y="104"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -30,7 +30,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="19" Y="11"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -38,7 +38,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
         <CursorPos X="50" Y="9"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -46,7 +46,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="4"/>
         <CursorPos X="18" Y="15"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -54,9 +54,8 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="13"/>
-        <CursorPos X="33" Y="43"/>
-        <UsageCount Value="24"/>
+        <CursorPos X="38" Y="52"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -91,139 +90,154 @@
         <CursorPos X="37" Y="497"/>
         <UsageCount Value="10"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="/home/tudi/fpcupdeluxe/lazarus/lcl/lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="92"/>
+        <CursorPos Y="114"/>
+        <UsageCount Value="10"/>
+      </Unit10>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="main.pas"/>
-        <Caret Line="111" Column="73" TopLine="9"/>
+        <Caret Line="110" TopLine="82"/>
       </Position1>
       <Position2>
-        <Filename Value="main.pas"/>
-        <Caret Line="96" Column="36" TopLine="44"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="54" TopLine="33"/>
       </Position2>
       <Position3>
-        <Filename Value="main.pas"/>
-        <Caret Line="44" Column="78" TopLine="33"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="55" TopLine="33"/>
       </Position3>
       <Position4>
-        <Filename Value="main.pas"/>
-        <Caret Line="123" Column="53" TopLine="88"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="56" TopLine="33"/>
       </Position4>
       <Position5>
-        <Filename Value="main.pas"/>
-        <Caret Line="142" Column="70" TopLine="103"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="62" TopLine="33"/>
       </Position5>
       <Position6>
-        <Filename Value="main.pas"/>
-        <Caret Line="120" Column="64" TopLine="55"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="64" TopLine="33"/>
       </Position6>
       <Position7>
-        <Filename Value="main.pas"/>
-        <Caret Line="147" Column="83" TopLine="113"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="66" TopLine="33"/>
       </Position7>
       <Position8>
-        <Filename Value="main.pas"/>
-        <Caret Line="164" Column="10" TopLine="124"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="67" Column="28" TopLine="33"/>
       </Position8>
       <Position9>
         <Filename Value="main.pas"/>
-        <Caret Line="106" Column="14" TopLine="83"/>
+        <Caret Line="109" TopLine="82"/>
       </Position9>
       <Position10>
-        <Filename Value="main.pas"/>
-        <Caret Line="147" Column="66" TopLine="138"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="66" TopLine="33"/>
       </Position10>
       <Position11>
-        <Filename Value="main.pas"/>
-        <Caret Line="98" Column="75" TopLine="29"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="67" TopLine="33"/>
       </Position11>
       <Position12>
-        <Filename Value="main.pas"/>
-        <Caret Line="99" Column="75" TopLine="30"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="75" Column="58" TopLine="33"/>
       </Position12>
       <Position13>
         <Filename Value="main.pas"/>
-        <Caret Line="30" Column="17" TopLine="7"/>
+        <Caret Line="109" TopLine="82"/>
       </Position13>
       <Position14>
-        <Filename Value="main.pas"/>
-        <Caret Line="29" Column="22" TopLine="7"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="66" TopLine="33"/>
       </Position14>
       <Position15>
-        <Filename Value="main.pas"/>
-        <Caret Line="158" Column="74" TopLine="150"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="67" Column="47" TopLine="35"/>
       </Position15>
       <Position16>
         <Filename Value="main.pas"/>
-        <Caret Line="169" TopLine="150"/>
+        <Caret Line="108" TopLine="82"/>
       </Position16>
       <Position17>
-        <Filename Value="main.pas"/>
-        <Caret Line="176" TopLine="150"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="66" TopLine="35"/>
       </Position17>
       <Position18>
         <Filename Value="main.pas"/>
-        <Caret Line="177" TopLine="150"/>
+        <Caret Line="99" Column="65" TopLine="82"/>
       </Position18>
       <Position19>
-        <Filename Value="main.pas"/>
-        <Caret Line="170" TopLine="146"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="66" TopLine="35"/>
       </Position19>
       <Position20>
         <Filename Value="main.pas"/>
-        <Caret Line="177" TopLine="146"/>
+        <Caret Line="104" Column="56" TopLine="82"/>
       </Position20>
       <Position21>
-        <Filename Value="main.pas"/>
-        <Caret Line="178" TopLine="146"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="66" TopLine="35"/>
       </Position21>
       <Position22>
-        <Filename Value="main.pas"/>
-        <Caret Line="179" TopLine="146"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="67" TopLine="35"/>
       </Position22>
       <Position23>
         <Filename Value="gen_to_file.pas"/>
-        <Caret Line="32" Column="92" TopLine="10"/>
+        <Caret Line="69" TopLine="35"/>
       </Position23>
       <Position24>
         <Filename Value="gen_to_file.pas"/>
-        <Caret Line="40" Column="140" TopLine="22"/>
+        <Caret Line="70" TopLine="35"/>
       </Position24>
       <Position25>
         <Filename Value="gen_to_file.pas"/>
-        <Caret Line="39" TopLine="16"/>
+        <Caret Line="71" TopLine="35"/>
       </Position25>
       <Position26>
         <Filename Value="gen_to_file.pas"/>
-        <Caret Line="40" Column="46" TopLine="16"/>
+        <Caret Line="72" TopLine="35"/>
       </Position26>
       <Position27>
         <Filename Value="gen_to_file.pas"/>
-        <Caret Line="57" Column="53" TopLine="29"/>
+        <Caret Line="73" TopLine="35"/>
       </Position27>
       <Position28>
         <Filename Value="gen_to_file.pas"/>
-        <Caret Line="46" Column="41" TopLine="29"/>
+        <Caret Line="74" TopLine="35"/>
       </Position28>
       <Position29>
-        <Filename Value="main.pas"/>
-        <Caret Line="150" Column="29" TopLine="145"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="75" TopLine="35"/>
       </Position29>
       <Position30>
-        <Filename Value="main.pas"/>
-        <Caret Line="119" Column="15" TopLine="92"/>
+        <Filename Value="gen_to_file.pas"/>
+        <Caret Line="62" TopLine="35"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="1">
+    <BreakPoints Count="2">
       <Item1>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="main.pas"/>
-        <Line Value="180"/>
+        <Line Value="203"/>
       </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="gen_to_file.pas"/>
+        <Line Value="65"/>
+      </Item2>
     </BreakPoints>
   </Debugging>
 </CONFIG>

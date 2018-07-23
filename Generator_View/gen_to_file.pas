@@ -37,7 +37,7 @@ begin
   for i := Low(pGenerators) to High(pGenerators) do
   begin
     content.Append(Ord(pGenerators[i].GeneratorType).ToString + sep + pGenerators[i].Name + sep + pGenerators[i].GeneratorMask + sep +
-      pGenerators[i].GeneratedLength.ToString + sep + pGenerators[i].FromValue + sep + pGenerators[i].ToValue + pGenerators[i].UIPosition.ToString);
+      pGenerators[i].GeneratedLength.ToString + sep + pGenerators[i].FromValue + sep + pGenerators[i].ToValue + sep + pGenerators[i].UIPosition.ToString);
   end;
 
   content.SaveToFile(_FileName);
@@ -48,6 +48,8 @@ function TGeneratorUtils.GeneratorsLoad(): TGenerators;
 var
   content: TStringList;
   i: byte;
+  s: string;
+  b: integer;
 
 begin
   content := TStringList.Create;
@@ -61,13 +63,16 @@ begin
   begin
     SetLength(Result, Length(Result) + 1);
 
-    Result[High(Result)].GeneratorType := TGeneratorTypes(ExtractDelimited(0, content[i], [',']).ToInteger);
-    Result[High(Result)].Name := ExtractDelimited(1, content[i], [',']);
-    Result[High(Result)].GeneratorMask := ExtractDelimited(2, content[i], [',']);
-    Result[High(Result)].GeneratedLength := ExtractDelimited(3, content[i], [',']).ToInteger;
-    Result[High(Result)].FromValue := ExtractDelimited(4, content[i], [',']);
-    Result[High(Result)].ToValue := ExtractDelimited(1, content[i], [',']);
-    Result[High(Result)].UIPosition := ExtractDelimited(1, content[i], [',']).ToInteger;
+    s := content[i];
+    s := ExtractDelimited(6, content[i], [',']);
+
+    Result[High(Result)].GeneratorType := TGeneratorTypes(ExtractDelimited(1, content[i], [',']).ToInteger);
+    Result[High(Result)].Name := ExtractDelimited(2, content[i], [',']);
+    Result[High(Result)].GeneratorMask := ExtractDelimited(3, content[i], [',']);
+    Result[High(Result)].GeneratedLength := ExtractDelimited(4, content[i], [',']).ToInteger;
+    Result[High(Result)].FromValue := ExtractDelimited(5, content[i], [',']);
+    Result[High(Result)].ToValue := ExtractDelimited(6, content[i], [',']);
+    Result[High(Result)].UIPosition := ExtractDelimited(7, content[i], [',']).ToInteger;
   end;
 
   FreeAndNil(content);
